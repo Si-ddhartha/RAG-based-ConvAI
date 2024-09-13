@@ -58,7 +58,7 @@ def main():
     model = ChatGoogleGenerativeAI(model=CHAT_MODEL)
     
     # Query
-    question = 'What is first aid?'
+    question = input("Enter your question: ")
     
     # Process query
     context = retrieve_context_from_db(db, question)
@@ -66,7 +66,7 @@ def main():
     answer = generate_answer(model, formatted_prompt)
     
     # Print the answer
-    print(answer)
+    print(f'Answer: {answer}')
 
 if __name__ == '__main__':
     main()
